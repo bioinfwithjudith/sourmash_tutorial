@@ -1,4 +1,4 @@
-# Sourmash tutorialD
+# sourmash Tutorial
 
 In this tutorial, we will XYZ.
 
@@ -8,7 +8,7 @@ Reference: combination of ecoli_GCF_000008865.2, scerevisiae_GCF_000146045.2, sj
 
 Samples: sample1.fna (ecoli) is present and sample2.fna (smikatae) is not present in reference
 
-## Preprocess FASTA and FASTQ files before using sourmash
+## Preprocess FASTA files before using sourmash
 
 Before getting started with analyzing your metagenomic data, preprocess your files by converting them into a minhash or fracminhash sketch. Minhash and Fracminhash sketches are hash sketches that create sketches using minimizers (minhash sketch) or a scale factor (i.e frac minhash sketch). Produce your sketches by using the sourmash sketch command. Depending on the type of sequences (i.e. DNA or protein sequneces) that you are using you are requireed to identify these. Your sourmash sketch command will take in a ksize and a scaled factor, where the kmers of your sequences will be obtained and will be scaled down to your sketch.
 
