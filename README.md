@@ -15,12 +15,11 @@ picture
 If we reduce the resolution of this photo, we can still identify that this is the Nittany Lion.
 
 **We can do the same using sequencing data!**
-
-picture
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/Picture3.png)
 
 # Preprocessing data utilizing sourmash sketch
 
-picture
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/Picture1.png)
 
 `sourmash sketch <dna, protein, translate> <FASTA/FASTQ> k=<ksize>,scaled=<int>`
 
