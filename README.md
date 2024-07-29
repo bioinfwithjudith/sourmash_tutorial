@@ -16,9 +16,13 @@ Simply put it, a minimized set of k-mers (a subset of a string of length k) is p
 
 ![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture6.png)
 
-## Comparing two FracMinHash sketches 
+## Comparing similarity of two FracMinHash sketches 
 
-Minhash, Jaccard, ANI, Containment
+One of the beneficial tasks of sourmash is to estimate similarity between sketches offering the similarity indexes Jaccard and Containment. 
+
+**Jaccard.** The Jaccard index is one of an earlier similarity index used to estimate the size of the union of two sets. However, as the sizes between two sets becomes more dissimilar, the less reliable is this estimation. (CITE)
+
+**Containment.** The Containment index addresses this issue by estimating what is contained from one Set in another so the differing size of two sets is not an issue. (CITE)
 
 Comparison facilitates further analyses such as dN/dS estimates. Check out fmh_dnds.
 
