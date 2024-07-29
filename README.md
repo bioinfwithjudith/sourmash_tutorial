@@ -1,4 +1,4 @@
-# The MetaQuest Tutorial
+# The MetaGenomQest Tutorial
 
 Each of you will get a random metagenomic sample and with the help of this tutorial, it is your quest to report the sample that you were tasked to study!
 
