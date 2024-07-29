@@ -66,9 +66,9 @@ summary of sketches:
    1 sketches with DNA, k=31, scaled=1000             21 total hashes
 ```
 
-# Compare and Search
+# Comparing and Searching of signatures
 
-## Comparing similarity of two sketches with sourmash compare
+## Compare similarity of two sketches with sourmash compare
 
 Now that we feel a bit more comfortable with a sketching fasta file. Let's sketch a another file to compare it to the previous signature file we produced. Notice, that we are using the same ksize and scale factor, sourmash requires that two signatures have parameters tuned in the same way for comparison. 
 
@@ -113,7 +113,7 @@ sample_001.fna,sample_002.fna
 0.7619047624764425,1.0
 ```
 
-### Comparing individual sequences between signatures.
+## Compare individual sequences between signatures.
 
 As you may have noticed, the comparisons reported are between two fasta files as a whole. However, you might be interested in comparing the sequences individually than the sequences as a whole. To accomplish this, we revisit `sourmash sketch`. 
 
@@ -148,7 +148,7 @@ We can run the same command for coomparing two signature files, and the csv file
 
 `sourmash compare sample_001.fna.singleton.sig sample_002.fna.singleton.sig --containment --csv compare.singleton.sig.csv`
 
-## Report overall similarity percentages using sourmash search
+## Search and report overall similarity percentages using sourmash search
 
 Maybe you would like to report the percent of how much there is of one sample in another sample.
 
@@ -179,7 +179,7 @@ similarity   match
  76.2%       sample_002.fna
  ```
 
-### Report similarity using the md5 identifier
+## Search an md5 identifier and report similarity
 
 Let's revisit the signature file that was produced using the `--singleton` flag. A manifest file contains md5 identifiers for each sketch within a signature file. To create your manifest file, use the following command:
 
