@@ -66,7 +66,7 @@ summary of sketches:
    1 sketches with DNA, k=31, scaled=1000             21 total hashes
 ```
 
-# Comparing and Searching of signatures
+# Comparing and Searching signatures
 
 ## Compare similarity of two sketches with sourmash compare
 
@@ -224,6 +224,13 @@ similarity   match
  86.4%       genome_A_1
 WARNING: size estimation for at least one of these sketches may be inaccurate. ANI values will not be reported for these comparisons.
 ```
+# Report abundance using sourmash gather
+
+One of the many tasks in metagenomic research, is reporting the abundanes of species within a sample. We can accomplish this utilizing `sourmash gather`.
+
+<span style="color:red">Unsure if this is working, running `sourmash gather --help` returning error</span>.
+
+
 
 # References
 <a id="1">[1]</a> 
