@@ -148,9 +148,16 @@ We can run the same command for coomparing two signature files, and the csv file
 
 # Report overall similarity percentages
 
-Maybe you would like to report the percent of how much there is of one sampne in another sample.
+Maybe you would like to report the percent of how much there is of one sample in another sample.
 
 `sourmash search sample_001.fna.sig sample_002.fna.sig --containment`
+
+|Parameter      |Description|
+|---------------|----------|
+|sourmash search| The command that sourmash utilizes to search how much a query is in a sample. |
+|sample_001.fna.sig       | signature filename 1. |
+|sample_002.fna.sig       | signature filename 2. |
+|--containment           | Flag to indicate we are using the similarity index containment. Other similarity indexes that can be used are `--jaccard` |
 
 According to the report below, there is ~76% of **sample_001.fna.sig** in **sample_002.fna.sig**.
 
@@ -176,7 +183,14 @@ Let's revisit the signature file that was produced using the `--singleton` flag.
 
 `sourmash sig manifest sample_001.fna.singleton.sig -o sample_001.manifest.csv`
 
-If you open the newly produced manifest.csv file, you'll observe that each sketch in your signature file has a md5 identifier. For tutorial purposes, I only show the first few lines.
+|Parameter      |Description|
+|---------------|----------|
+|sourmash sig manifest| The command that sourmash utilizes to produce a manifest file. |
+|sample_001.fna.singleton.sig       | signature filename 1 that includes a sketch for each sequence. |
+|-o           | Output name of manifest file. The output name can also be indicated using `--csv` |
+
+
+If you open the newly produced manifest file, you'll observe that each sketch in your signature file has a md5 identifier. For tutorial purposes, I only show the first few lines.
 
 |internal_location|md5|md5short|ksize|moltype|num|scaled|n_hashes|with_abundance|name|filename|
 |-|-|-|-|-|-|-|-|-|-|-|
