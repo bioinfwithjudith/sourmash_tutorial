@@ -1,6 +1,6 @@
 # The MetaQuest Tutorial
 
-Each of you will get a random sample and with the help of this tutorial, it it your side quest to report the sample that you were tasked to study!
+Each of you will get a random sample and with the help of this tutorial, it is your quest to report the metagenomic sample that you were tasked to study!
 
 # Introduction
 
