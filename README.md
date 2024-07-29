@@ -111,7 +111,7 @@ sample_001.fna,sample_002.fna
 0.7619047624764425,1.0
 ```
 
-## Comparing individual sequences between sigantures.
+## Comparing individual sequences between signatures.
 
 As you may have noticed, the comparisons reported are between two fasta files as a whole. However, you might be interested in comparing the sequences individually than the sequences as a whole. To accomplish this, we revisit `sourmash sketch`. 
 
