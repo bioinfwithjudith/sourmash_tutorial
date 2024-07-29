@@ -146,6 +146,69 @@ We can run the same command for coomparing two signature files, and the csv file
 
 `sourmash compare sample_001.fna.singleton.sig sample_002.fna.singleton.sig --containment --csv compare.singleton.sig.csv`
 
+# Report overall similarity percentages
+
+Maybe you would like to report the percent of how much there is of one sampne in another sample.
+
+`sourmash search sample_001.fna.sig sample_002.fna.sig --containment`
+
+According to the report below, there is ~76% of **sample_001.fna.sig** in **sample_002.fna.sig**.
+
+```
+== This is sourmash version 4.8.6. ==
+== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+select query k=31 automatically.
+loaded query: sample_001.fna... (k=31, DNA)
+--
+loaded 1 total signatures from 1 locations.
+after selecting signatures compatible with search, 1 remain.
+
+1 matches above threshold 0.080:
+similarity   match
+----------   -----
+ 76.2%       sample_002.fna
+ ```
+
+## Report similarity using the md5 identifier
+
+Let's revisit the signature file that was produced using the `--singleton` flag. A manifest file contains md5 identifiers for each sketch within a signature file. To create your manifest file, use the following command:
+
+`sourmash sig manifest sample_001.fna.singleton.sig -o sample_001.manifest.csv`
+
+If you open the newly produced manifest.csv file, you'll observe that each sketch in your signature file has a md5 identifier. For tutorial purposes, I only show the first few lines.
+
+|internal_location|md5|md5short|ksize|moltype|num|scaled|n_hashes|with_abundance|name|filename|
+|-|-|-|-|-|-|-|-|-|-|-|
+sample_001.fna.sig|d3513280b35b2a918a7181875c0683c8|d3513280|31|DNA|0|500|22|0|genome_A_sequence_A|datasets/sample_001.fna|
+sample_001.fna.sig|2d96ee330b6b295a06b70fdbfb75af34|2d96ee33|31|DNA|0|500|21|0|genome_A_sequence_0|datasets/sample_001.fna|
+sample_001.fna.sig|364c20a1ca43d3ae3e9ae7d9e9a6c837|364c20a1|31|DNA|0|500|19|0|genome_B_sequence_0|datasets/sample_001.fna|
+
+If we copy the first `md5` identifer in this file, we can `sourmash search` how much of this sequence is in **sample_002.fna.singleton.sig**
+
+`sourmash search sample_001.fna.singleton.sig sample_002.fna.singleton.sig --md5 d3513280b35b2a918a7181875c0683c8 --containment`
+
+The md5 identifier that we are interested in is found across three sequences in sample_002.fna.singleton.sig with the following percentages.
+
+```
+== This is sourmash version 4.8.6. ==
+== Please cite Brown and Irber (2016), doi:10.21105/joss.00027. ==
+
+select query k=31 automatically.
+loaded query: genome_A_sequence_A... (k=31, DNA)
+--
+loaded 10 total signatures from 1 locations.
+after selecting signatures compatible with search, 10 remain.
+
+9 matches above threshold 0.080; showing first 3:
+similarity   match
+----------   -----
+100.0%       ref_gene
+ 90.9%       genome_A_2
+ 86.4%       genome_A_1
+WARNING: size estimation for at least one of these sketches may be inaccurate. ANI values will not be reported for these comparisons.
+```
+
 # References
 <a id="1">[1]</a> 
 Brown, C. T., & Irber, L. (2016). sourmash: a library for MinHash sketching of DNA. Journal of open source software, 1(5), 27.
