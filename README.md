@@ -4,7 +4,7 @@ Description
 
 # Introduction
 
-As sequencing methods become more inexpensive, producing genomic and metagenomic data becomes more available for large-scale analyses. Therefore, the development of quick and accuarate computational approaches become essential. Here, we introduce one such program, sourmash, which enables the minimization of sequencing data, similarity comparisons, species identification, among other tasks.
+As sequencing methods become more inexpensive, producing genomic and metagenomic data becomes more available for large-scale analyses. Therefore, the development of quick and accuarate computational approaches become essential. Here, we introduce one such program, sourmash, which enables the minimization of sequencing data, similarity comparisons, species identification, among other tasks[[1]](#1).
 
 ## FracMinHash Sketch 
 
@@ -20,9 +20,9 @@ Simply put it, a minimized set of k-mers (a subset of a string of length k) is p
 
 One of the beneficial tasks of sourmash is to estimate similarity between sketches offering the similarity indexes Jaccard and Containment. 
 
-**Jaccard.** The Jaccard index is one of an earlier similarity index used to estimate the size of the union of two sets. However, as the sizes between two sets becomes more dissimilar, the less reliable is this estimation. (CITE)
+**Jaccard.** The Jaccard index is one of an earlier similarity index used to estimate the size of the union of two sets. However, as the sizes between two sets becomes more dissimilar, the less reliable is this estimation[[2]](#2).
 
-**Containment.** The Containment index addresses this issue by estimating what is contained from one Set in another so the differing size of two sets is not an issue. (CITE)
+**Containment.** The Containment index addresses this issue by estimating what is contained from one Set in another so the differing size of two sets is not an issue[[2]](#2).
 
 ![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture8.png)
 
@@ -146,4 +146,12 @@ We can run the same command for coomparing two signature files, and the csv file
 
 `sourmash compare sample_001.fna.singleton.sig sample_002.fna.singleton.sig --containment --csv compare.singleton.sig.csv`
 
+# References
+<a id="1">[1]</a> 
+Brown, C. T., & Irber, L. (2016). sourmash: a library for MinHash sketching of DNA. Journal of open source software, 1(5), 27.
 
+<a id="2">[2]</a> 
+Koslicki, D., & Zabeti, H. (2019). Improving minhash via the containment index with applications to metagenomic analysis. Applied Mathematics and Computation, 354, 206-215.
+
+<a id="3">[3]</a> 
+Hera, M. R., Pierce-Ward, N. T., & Koslicki, D. (2023). Deriving confidence intervals for mutation rates across a wide range of evolutionary distances using FracMinHash. Genome research, 33(7), 1061-1068.
