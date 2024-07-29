@@ -66,15 +66,17 @@ summary of sketches:
    1 sketches with DNA, k=31, scaled=1000             21 total hashes
 ```
 
-# Comparing simmilarity of two sketches with sourmash compare
+# Comparing similarity of two sketches with sourmash compare
 
-Now that we feel a bit more comfortable with a sketching fasta file. Let's sketch a another file to compare it to the previous signature file we produced.
+Now that we feel a bit more comfortable with a sketching fasta file. Let's sketch a another file to compare it to the previous signature file we produced. Notice, that we are using the same ksize and scale factor, sourmash requires that two signatures have parameters tuned in the same way for comparison. 
 
 `sourmash sketch dna datasets/sample_002.fna -p k=31,scaled=500`
 
-Notice, that we are using the same ksize and scale factor, sourmash requires that two signatures have parameters tuned in the same way for comparison. 
+Let's estimate the containment index of our signature files utilizing `sourmash compare`!
 
 `sourmash compare sample_001.fna.sig sample_002.fna.sig --containment`
+
+You should see the following output, where we have the names of the original fasta files and the containment between these files.
 
 ```
 == This is sourmash version 4.8.6. ==
@@ -101,7 +103,7 @@ These results can be reported to a csv file for further analyses.
 |--containment           | Flag to indicate we are using the similarity index containment. Other similarity indexes that can be used are **--jaccard** or **--ani** |
 |--csv           | Flag to indicate we want to produce a CSV file to report a matrix with similarity indexes |
 
-Looking at our newly produced csv file, we would expect a similarity matrix:
+Looking at our newly produced csv file, we would expect the following similarity matrix:
 
 ```
 sample_001.fna,sample_002.fna
@@ -113,11 +115,11 @@ sample_001.fna,sample_002.fna
 
 As you may have noticed, the comparisons reported are between two fasta files as a whole. However, you might be interested in comparing the sequences individually than the sequences as a whole. To accomplish this, we revisit `sourmash sketch`. 
 
-Your sourmash sketch command will be modified by adding the **--singleton** flag, this will produce a signature file where each sequence is sketched individually.
+Let's modify our `sourmaash sketch` command by adding the `--singleton` flag, this will produce a signature file where each sequence is sketched individually.
 
 `sourmash sketch dna datasets/sample_001.fna --singleton -p k=31,scaled=500 -o sample_001.fna.singleton.sig`
 
-Compare the description between the first signature file we produced without the `--singleton` flag, **sample_001.fna.sig** and **sample_001.fna.singleton.sig**.
+Compare the description between the first signature file we produced in which the `--singleton` flag was not utilized (**sample_001.fna.sig**) ato our new siganture file that does utilize the `--singleton` flag, **sample_001.fna.singleton.sig**.
 
 `sourmash sig fileinfo sample_001.fna.singleton.sig`
 
@@ -140,7 +142,7 @@ summary of sketches:
    10 sketches with DNA, k=31, scaled=500             210 total hashes
 ```
 
-We can run the same command for coomparing two signature files, and the csv file produced will ccontain the matrix for individual sequences.
+We can run the same command for coomparing two signature files, and the csv file produced will contain the matrix for individual sequences.
 
 `sourmash compare sample_001.fna.singleton.sig sample_002.fna.singleton.sig --containment --csv compare.singleton.sig.csv`
 
