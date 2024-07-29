@@ -6,7 +6,9 @@ Description
 
 As sequencing methods become more inexpensive, producing genomic and metagenomic data becomes more available for large-scale analyses. Therefore, the development of quick and accuarate computational approaches become essential. Here, we introduce one such program, sourmash, which enables the minimization of sequencing data, similarity comparisons, species identification, among other tasks.
 
-**What do we mean by minimization?** Utilizing sourmash, we can sketch a simpler representation of the original genomic or metagenomic datasets using the FracMinHash approach. 
+## FracMinHash Sketch 
+
+Utilizing sourmash, we can sketch a simpler representation of the original genomic or metagenomic datasets using the FracMinHash approach. 
 
 ![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture3.png)
 
@@ -14,7 +16,7 @@ Simply put it, a minimized set of k-mers (a subset of a string of length k) is p
 
 ![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture6.png)
 
-**Comparing two FracMinHash sketches is possible.** 
+## Comparing two FracMinHash sketches 
 
 Minhash, Jaccard, ANI, Containment
 
@@ -105,7 +107,9 @@ sample_001.fna,sample_002.fna
 0.7619047624764425,1.0
 ```
 
-**Comparing individual sequences between sigantures.** As you may have noticed, the comparisons reported are between two fasta files as a whole. However, you might be interested in comparing the sequences individually than the sequences as a whole. To accomplish this, we revisit `sourmash sketch`. 
+## Comparing individual sequences between sigantures.
+
+As you may have noticed, the comparisons reported are between two fasta files as a whole. However, you might be interested in comparing the sequences individually than the sequences as a whole. To accomplish this, we revisit `sourmash sketch`. 
 
 Your sourmash sketch command will be modified by adding the **--singleton** flag, this will produce a signature file where each sequence is sketched individually.
 
