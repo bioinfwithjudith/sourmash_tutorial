@@ -64,7 +64,7 @@ summary of sketches:
    1 sketches with DNA, k=31, scaled=1000             21 total hashes
 ```
 
-# Comparing two sketches with sourmash compare
+# Comparing simmilarity of two sketches with sourmash compare
 
 Now that we feel a bit more comfortable with a sketching fasta file. Let's sketch a another file to compare it to the previous signature file we produced.
 
