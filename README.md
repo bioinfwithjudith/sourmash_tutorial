@@ -1,6 +1,6 @@
-# Tutorial: Name
+# The MetaQuest Tutorial
 
-Description
+Each of you will get a random sample and with the help of this tutorial, it it your side quest to report the sample that you were tasked to study!
 
 # Introduction
 
