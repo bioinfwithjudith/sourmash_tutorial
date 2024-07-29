@@ -8,11 +8,11 @@ As sequencing methods become more inexpensive, producing genomic and metagenomic
 
 **What do we mean by minimization?** Utilizing sourmash, we can sketch a simpler representation of the original genomic or metagenomic datasets using the FracMinHash approach. 
 
-![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/Picture3.png)
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture3.png)
 
 Simply put it, a minimized set of k-mers (a subset of a string of length k) is produced from a fasta file with sequences of interest. The threshold to which the set is minimized is indicated by a scale factor, a parameter used to reduce the original set. Note that if a scale factor of 1 is utilized, the final FracMinHash sketch will be the original set of k-mers and as this number increases, the more the original set of k-mers will decrease for the final FracMinHash sketch. Each k-mer in the original set is passed through a Hash function, k-mers that minimize this function by having a value that is equal or less to the scale factor are used in the final FracMinHash sketch, FRAC(A) for example. 
 
-![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/Picture6.png)
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture6.png)
 
 **Comparing two FracMinHash sketches is possible.** 
 
@@ -20,7 +20,7 @@ Minhash, Jaccard, ANI, Containment
 
 Comparison facilitates further analyses such as dN/dS estimates. Check out fmh_dnds.
 
-![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/Picture7.png)
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture7.png)
 
 
 # Preprocessing data utilizing sourmash sketch
