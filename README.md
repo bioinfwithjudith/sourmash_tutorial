@@ -24,9 +24,7 @@ One of the beneficial tasks of sourmash is to estimate similarity between sketch
 
 **Containment.** The Containment index addresses this issue by estimating what is contained from one Set in another so the differing size of two sets is not an issue. (CITE)
 
-Comparison facilitates further analyses such as dN/dS estimates. Check out fmh_dnds.
-
-![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture7.png)
+![alt text](https://github.com/bioinfwithjudith/sourmash_tutorial/blob/main/src/Picture8.png)
 
 
 # Preprocessing data utilizing sourmash sketch
